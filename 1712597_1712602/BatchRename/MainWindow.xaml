@@ -1,0 +1,146 @@
+﻿<Window x:Class="BatchRename.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BatchRename"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="510" Width="1010"
+        DataContext="{Binding Path=Main, Source={StaticResource Locator}}"
+        x:Name="BatchRenameW"
+       >
+
+    <Grid >
+        
+        <DockPanel>
+            <ToolBarTray Height="40" Margin="0,0,0,10" DockPanel.Dock="Top" Background="Azure">
+                <ToolBar Background="Azure">
+                    <Separator></Separator>
+                    <Button Name="RefreshButton" Click="RefreshButton_Clik">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{Binding Path= Icon.icon[0].Value}" 
+                                           Width="30" Height="30" Margin="0,0,5,0"
+                                           RenderOptions.BitmapScalingMode="HighQuality"/>
+                            <TextBlock VerticalAlignment="Center">Refresh</TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Separator></Separator>
+                    <Button Name="HelpButton" Click="HelpButton_Clik">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{Binding Path= Icon.icon[1].Value}" 
+                                           Width="30" Height="30" Margin="0,0,5,0"
+                                           RenderOptions.BitmapScalingMode="HighQuality"/>
+                            <TextBlock VerticalAlignment="Center">Help</TextBlock>
+                        </StackPanel>
+                    </Button>
+                </ToolBar>
+            </ToolBarTray>
+            <TabControl  Width="250" Margin="0,0,40,0" DockPanel.Dock="Left" Background="AliceBlue">
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{Binding Path= Icon.icon[2].Value}" 
+                                           Width="30" Height="30" Margin="0,0,5,0"
+                                           RenderOptions.BitmapScalingMode="HighQuality"/>
+                            <TextBlock VerticalAlignment="Center" >Action</TextBlock>
+                        </StackPanel>
+                    </TabItem.Header>
+                </TabItem>
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{Binding Path= Icon.icon[3].Value}" 
+                                           Width="30" Height="30" Margin="0,0,5,0"
+                                           RenderOptions.BitmapScalingMode="HighQuality"/>
+                            <TextBlock VerticalAlignment="Center">List Action</TextBlock>
+                        </StackPanel>
+                    </TabItem.Header>
+                </TabItem>
+
+            </TabControl>
+            <TabControl DockPanel.Dock="Right">
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{Binding Path = Icon.icon[4].Value}" 
+                                           Width="30" Height="30" Margin="0,0,5,0"
+                                           RenderOptions.BitmapScalingMode="HighQuality"/>
+                            <TextBlock VerticalAlignment="Center" >Files</TextBlock>
+                        </StackPanel>
+                    </TabItem.Header>
+
+                    <DockPanel>
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="10,10,0,10">
+                            <Button Width="100" Height="40" Margin="0,0,10,0"  Command="{Binding Path=SelectFileCommand}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="{Binding Path = Icon.icon[5].Value}" 
+                                           Width="30" Height="30" Margin="0,0,5,0"
+                                           RenderOptions.BitmapScalingMode="HighQuality"/>
+                                    <TextBlock VerticalAlignment="Center">Add</TextBlock>
+                                </StackPanel>
+                            </Button>
+                            <Button Width="100" Height="40" Margin="0,0,10,0">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="{Binding Path = Icon.icon[8].Value}" 
+                                           Width="30" Height="30" Margin="0,0,5,0"
+                                           RenderOptions.BitmapScalingMode="HighQuality"/>
+                                    <TextBlock VerticalAlignment="Center">Batch</TextBlock>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                        <ListView  ItemsSource="{Binding OldNameFiles}" Name="FileListView"  DockPanel.Dock="Bottom" >
+                            <ListView.View>
+                                <GridView >
+                                    <GridViewColumn Header="Filename" Width="177" DisplayMemberBinding="{Binding Value}" />
+                                    <GridViewColumn Header="New Filename" Width="177" DisplayMemberBinding="{Binding NewNameFiles }"/>
+                                    <GridViewColumn Header="Path" Width="177" DisplayMemberBinding="{Binding Path}"/>
+                                    <GridViewColumn Header="Status" Width="177" DisplayMemberBinding="{Binding Status}"/>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </DockPanel>
+                </TabItem>
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                                <Image Source="{Binding Path = Icon.icon[6].Value}" 
+                                           Width="30" Height="30" Margin="0,0,5,0"
+                                           RenderOptions.BitmapScalingMode="HighQuality"/>
+                                <TextBlock VerticalAlignment="Center">Folders</TextBlock>
+                        </StackPanel>
+                    </TabItem.Header>
+                    <DockPanel>
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="10,10,0,10">
+                            <Button Width="120" Height="40" Margin="0,0,10,0"  Command="{Binding Path=SelectFolderCommand}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="{Binding Path = Icon.icon[7].Value}" 
+                                           Width="30" Height="30" Margin="0,0,5,0"
+                                           RenderOptions.BitmapScalingMode="HighQuality"/>
+                                    <TextBlock VerticalAlignment="Center">Add</TextBlock>
+                                </StackPanel>
+                            </Button>
+                            <Button Width="120" Height="40" Margin="0,0,10,0">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="{Binding Path = Icon.icon[8].Value}" 
+                                           Width="30" Height="30" Margin="0,0,5,0"
+                                           RenderOptions.BitmapScalingMode="HighQuality"/>
+                                    <TextBlock VerticalAlignment="Center">Batch</TextBlock>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                        <ListView  ItemsSource="{Binding OldNameFolders}" Name="FolderListView"  DockPanel.Dock="Bottom" >
+                            <ListView.View>
+                                <GridView >
+                                    <GridViewColumn Header="Filename" Width="177" DisplayMemberBinding="{Binding Value}" />
+                                    <GridViewColumn Header="New Filename" Width="177" DisplayMemberBinding="{Binding NewNameFolders }"/>
+                                    <GridViewColumn Header="Path" Width="177" DisplayMemberBinding="{Binding Path}"/>
+                                    <GridViewColumn Header="Status" Width="177" DisplayMemberBinding="{Binding Status}"/>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </DockPanel>
+                </TabItem>
+            </TabControl>
+        </DockPanel>
+    </Grid>
+</Window>

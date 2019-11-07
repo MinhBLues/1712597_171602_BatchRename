@@ -1,0 +1,126 @@
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\obj\Debug\BatchRename.csprojAssemblyReference.cache
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\obj\Debug\Dialog\ReplaceDialog.g.cs
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\obj\Debug\MainWindow.g.cs
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\obj\Debug\App.g.cs
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\obj\Debug\BatchRename_MarkupCompile.cache
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\obj\Debug\BatchRename_MarkupCompile.lref
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\obj\Debug\Dialog\MoveControl.g.cs
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\obj\Debug\Dialog\NameNormalizeDialog.g.cs
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\obj\Debug\Dialog\NewCaseDialog.g.cs
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\obj\Debug\Dialog\UniqueNameDialog.g.cs
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\bin\Debug\BatchRename.exe.config
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\bin\Debug\BatchRename.exe
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\bin\Debug\BatchRename.pdb
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\obj\Debug\Dialog\ReplaceDialog.baml
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\obj\Debug\MainWindow.baml
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\obj\Debug\Dialog\MoveControl.baml
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\obj\Debug\Dialog\NameNormalizeDialog.baml
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\obj\Debug\Dialog\NewCaseDialog.baml
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\obj\Debug\Dialog\UniqueNameDialog.baml
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\obj\Debug\BatchRename.g.resources
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\obj\Debug\BatchRename.Properties.Resources.resources
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\obj\Debug\BatchRename.csproj.GenerateResource.cache
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\obj\Debug\BatchRename.exe
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\obj\Debug\BatchRename.pdb
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\bin\Debug\CommonServiceLocator.dll
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\bin\Debug\GalaSoft.MvvmLight.dll
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\bin\Debug\GalaSoft.MvvmLight.Extras.dll
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\bin\Debug\GalaSoft.MvvmLight.Platform.dll
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\bin\Debug\Microsoft.WindowsAPICodePack.dll
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\bin\Debug\System.Windows.Interactivity.dll
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\bin\Debug\GalaSoft.MvvmLight.pdb
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\bin\Debug\GalaSoft.MvvmLight.xml
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\bin\Debug\GalaSoft.MvvmLight.Extras.xml
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\bin\Debug\GalaSoft.MvvmLight.Platform.xml
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\bin\Debug\Microsoft.WindowsAPICodePack.xml
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\obj\Debug\BatchRename.csproj.CopyComplete
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\NAM 3\LTW_C#\Đồ án\1712597_1712602\BatchRename\obj\Debug\App.baml
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\bin\Debug\BatchRename.exe.config
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\bin\Debug\BatchRename.exe
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\bin\Debug\BatchRename.pdb
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\bin\Debug\CommonServiceLocator.dll
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\bin\Debug\GalaSoft.MvvmLight.dll
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\bin\Debug\GalaSoft.MvvmLight.Extras.dll
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\bin\Debug\GalaSoft.MvvmLight.Platform.dll
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\bin\Debug\Microsoft.WindowsAPICodePack.dll
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\bin\Debug\GalaSoft.MvvmLight.pdb
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\bin\Debug\GalaSoft.MvvmLight.xml
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\bin\Debug\GalaSoft.MvvmLight.Extras.xml
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\bin\Debug\GalaSoft.MvvmLight.Platform.xml
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\bin\Debug\Microsoft.WindowsAPICodePack.xml
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\obj\Debug\BatchRename.csprojAssemblyReference.cache
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\obj\Debug\Dialog\MoveControl.g.cs
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\obj\Debug\Dialog\NameNormalizeDialog.g.cs
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\obj\Debug\Dialog\NewCaseDialog.g.cs
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\obj\Debug\Dialog\ReplaceDialog.g.cs
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\obj\Debug\Dialog\UniqueNameDialog.g.cs
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\obj\Debug\MainWindow.g.cs
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\obj\Debug\App.g.cs
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\obj\Debug\BatchRename_MarkupCompile.cache
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\obj\Debug\BatchRename_MarkupCompile.lref
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\obj\Debug\App.baml
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\obj\Debug\Dialog\MoveControl.baml
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\obj\Debug\Dialog\NameNormalizeDialog.baml
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\obj\Debug\Dialog\NewCaseDialog.baml
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\obj\Debug\Dialog\ReplaceDialog.baml
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\obj\Debug\Dialog\UniqueNameDialog.baml
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\obj\Debug\MainWindow.baml
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\obj\Debug\BatchRename.g.resources
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\obj\Debug\BatchRename.Properties.Resources.resources
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\obj\Debug\BatchRename.csproj.GenerateResource.cache
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\obj\Debug\BatchRename.csproj.CopyComplete
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\obj\Debug\BatchRename.exe
+C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\obj\Debug\BatchRename.pdb
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\bin\Debug\BatchRename.exe.config
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\bin\Debug\BatchRename.exe
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\bin\Debug\BatchRename.pdb
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\bin\Debug\CommonServiceLocator.dll
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\bin\Debug\GalaSoft.MvvmLight.dll
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\bin\Debug\GalaSoft.MvvmLight.Extras.dll
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\bin\Debug\GalaSoft.MvvmLight.Platform.dll
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\bin\Debug\Microsoft.WindowsAPICodePack.dll
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\bin\Debug\GalaSoft.MvvmLight.pdb
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\bin\Debug\GalaSoft.MvvmLight.xml
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\bin\Debug\GalaSoft.MvvmLight.Extras.xml
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\bin\Debug\GalaSoft.MvvmLight.Platform.xml
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\bin\Debug\Microsoft.WindowsAPICodePack.xml
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\obj\Debug\BatchRename.csprojAssemblyReference.cache
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\obj\Debug\Dialog\MoveControl.g.cs
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\obj\Debug\Dialog\NameNormalizeDialog.g.cs
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\obj\Debug\Dialog\NewCaseDialog.g.cs
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\obj\Debug\Dialog\ReplaceDialog.g.cs
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\obj\Debug\Dialog\UniqueNameDialog.g.cs
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\obj\Debug\MainWindow.g.cs
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\obj\Debug\App.g.cs
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\obj\Debug\BatchRename_MarkupCompile.cache
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\obj\Debug\BatchRename_MarkupCompile.lref
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\obj\Debug\App.baml
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\obj\Debug\Dialog\MoveControl.baml
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\obj\Debug\Dialog\NameNormalizeDialog.baml
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\obj\Debug\Dialog\NewCaseDialog.baml
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\obj\Debug\Dialog\ReplaceDialog.baml
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\obj\Debug\Dialog\UniqueNameDialog.baml
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\obj\Debug\MainWindow.baml
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\obj\Debug\BatchRename.g.resources
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\obj\Debug\BatchRename.Properties.Resources.resources
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\obj\Debug\BatchRename.csproj.GenerateResource.cache
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\obj\Debug\BatchRename.csproj.CopyComplete
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\obj\Debug\BatchRename.exe
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\obj\Debug\BatchRename.pdb
