@@ -18,7 +18,7 @@ namespace BatchRename.Dialog
     /// <summary>
     /// Interaction logic for NewCaseDialog.xaml
     /// </summary>
-    public partial class NewCaseDialog : Page
+    public partial class NewCaseDialog : UserControl
     {
         public NewCaseDialog()
         {

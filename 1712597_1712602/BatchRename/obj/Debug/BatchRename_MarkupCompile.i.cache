@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\obj\Debug\
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\obj\Debug\
 BatchRename
 none
 false
 DEBUG;TRACE
-C:\Users\MinhP\OneDrive\Documents\1712597_1712602_Batch_Rename\1712597_1712602\BatchRename\App.xaml
-6547243329
+C:\Users\MinhP\OneDrive\Desktop\1712597_1712602\BatchRename\App.xaml
+6-159919817
 
-16908464538
-1251692959457
-Dialog\MoveControl.xaml;Dialog\NameNormalizeDialog.xaml;Dialog\NewCaseDialog.xaml;Dialog\ReplaceDialog.xaml;Dialog\UniqueNameDialog.xaml;MainWindow.xaml;
+161241992393
+1251121307288
+Dialog\MoveDialog.xaml;Dialog\NameNormalizeDialog.xaml;Dialog\NewCaseDialog.xaml;Dialog\ReplaceDialog.xaml;Dialog\UniqueNameDialog.xaml;MainWindow.xaml;
 
 True
 
