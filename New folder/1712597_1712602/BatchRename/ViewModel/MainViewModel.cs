@@ -16,8 +16,6 @@ namespace BatchRename.ViewModel
 {
     class MainViewModel : ViewModelBase
     {
-
-
         /// <summary>
         ///File 
         /// </summary>

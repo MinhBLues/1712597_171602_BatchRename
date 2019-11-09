@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,11 +26,15 @@ namespace BatchRename.Dialog
         {
             InitializeComponent();
             myArgs = args as ReplaceArgs;
-            //fromTextBox.Text = myArgs.From;
+            FromTextBox.Text = myArgs.From;
+            ToTextBox.Text = myArgs.To;
         }
 
         private void AddToListButton_Click(object sender, RoutedEventArgs e)
         {
+
+            myArgs.From = FromTextBox.Text;
+            myArgs.To = ToTextBox.Text;
             DialogResult = true;
             Close();
         }

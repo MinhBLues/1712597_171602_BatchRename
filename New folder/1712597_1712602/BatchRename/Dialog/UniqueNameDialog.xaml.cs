@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,16 +19,26 @@ namespace BatchRename.Dialog
     /// <summary>
     /// Interaction logic for UniqueNameDialog.xaml
     /// </summary>
-    public partial class UniqueNameDialog : UserControl
+    public partial class UniqueNameDialog : Window
     {
-        public UniqueNameDialog()
+        UniqueArgs myArgs;
+        public UniqueNameDialog(StringArgs args)
         {
             InitializeComponent();
+            myArgs = args as UniqueArgs;
+            MainListView.ItemsSource = Options;
         }
 
+
+        BindingList<MyString> Options = new BindingList<MyString>()
+        {
+            new MyString() { Value = "Change name to GUID" },
+        };
         private void AddToListButton_Click(object sender, RoutedEventArgs e)
         {
-
+            myArgs.From = (MainListView.SelectedItem as MyString).Value;
+            DialogResult = true;
+            Close();
         }
     }
 }

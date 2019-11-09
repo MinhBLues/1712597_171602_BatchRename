@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,10 +26,19 @@ namespace BatchRename.Dialog
         {
             InitializeComponent();
             myArgs = args as NewCaseArgs;
+            MainGrid.DataContext = this;
+            MainListView.ItemsSource = cases;
+            
         }
-
+        BindingList<MyString> cases = new BindingList<MyString>()
+            {
+                new MyString(){ Value="LowerCase" },
+                new MyString(){ Value="UpperCase" },
+                new MyString(){ Value="CapitalizedCase" },
+            };
         private void AddToListButton_Click(object sender, RoutedEventArgs e)
         {
+            myArgs.Case = (MainListView.SelectedItem as MyString).Value;
             DialogResult = true;
             Close();
         }

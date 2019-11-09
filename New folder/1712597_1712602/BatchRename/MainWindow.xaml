@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="510" Width="1010"
         DataContext="{Binding Path=Main, Source={StaticResource Locator}}"
-        x:Name="BatchRenameW"
+       
         Loaded="Window_Loaded">
     <Grid >
         
@@ -47,50 +47,17 @@
                         </StackPanel>
                     </TabItem.Header>
                     <DockPanel>
-
-                        <ListView Name="ActionsListView" DockPanel.Dock="Top">
-                            <ListView.Resources>
-                                <Style TargetType="ListViewItem">
-                                    <Style.Triggers>
-                                        <Trigger Property="IsKeyboardFocusWithin" Value="True">
-                                            <Setter Property="IsSelected" Value="True"/>
-                                        </Trigger>
-
-                                        <Trigger Property="IsSelected" Value="True" >
-                                            <Setter Property="FontWeight" Value="Bold" />
-                                            <Setter Property="Background" Value="Red" />
-                                            <Setter Property="Foreground" Value="Black" />
-                                        </Trigger>
-                                    </Style.Triggers>
-
-                                </Style>
-                            </ListView.Resources>
-                            <ListView.ItemTemplate>
+                        <StackPanel >
+                        <ListBox Name="ActionsListView" DockPanel.Dock="Top" Height="200">
+  
+                            <ListBox.ItemTemplate>
                                 <DataTemplate>
-                                    <Button Width="230" HorizontalContentAlignment="Left" Name="R"  Click="Click" Margin="0,0,0,10" >
-                                        <StackPanel Orientation="Horizontal">
-                                            <Image Source="{Binding Path= Icon.icon[9].Value}"
-                                           Width="30" Height="20" Margin="0,0,5,0"
-                                           RenderOptions.BitmapScalingMode="HighQuality"/>
-
-                                            <TextBlock Text="{Binding Name, Mode=OneWay}" VerticalAlignment="Center"/>
-                                        </StackPanel>
-                                    </Button>
+                                    <TextBlock Background="AliceBlue"  Width="220" Height="30" Margin="5,5,5,0" Text="{Binding Name, Mode=OneWay}" VerticalAlignment="Center"  />
                                 </DataTemplate>
-                            </ListView.ItemTemplate>
-                        </ListView>
-                        <!--<ListView Name="ActionsView" DockPanel.Dock="Top">
-                            <Button Width="230" HorizontalContentAlignment="Left"  Click="Click" Margin="0,0,0,10" >
-                                <StackPanel Orientation="Horizontal">
-                                    <Image Source="{Binding Path= Icon.icon[9].Value}" 
-                                           Width="30" Height="20" Margin="0,0,5,0"
-                                           RenderOptions.BitmapScalingMode="HighQuality"/>
-                                    
-                                    <TextBlock Name ="Replace" Text="Replace" VerticalAlignment="Center" />
-                                </StackPanel>
-                            </Button>
-                           
-                        </ListView>-->
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                        <Button  DockPanel.Dock ="Bottom"  Name="Add" Click="Add_Click" Content="Add" Margin="120,30,0,10" Width="80" Height="25" />
+                        </StackPanel>
                     </DockPanel>
                 </TabItem>
                 <TabItem>
@@ -102,9 +69,82 @@
                             <TextBlock VerticalAlignment="Center">List Action</TextBlock>
                         </StackPanel>
                     </TabItem.Header>
-                   
+                    <!--<DockPanel>
+                        <StackPanel Orientation="Horizontal" Height="25"
+                                        HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                                        DockPanel.Dock="Bottom" Margin="0,10,0,0">
+                            <Button Margin="0,0,10,0" Width="80" 
+                                        Click="OpenButtonAddList_click">
+
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="{Binding Images.OpenIcon[0].Value}" 
+                                           Width="20" Height="20" Margin="0,0,5,0"
+                                           RenderOptions.BitmapScalingMode="HighQuality"/>
+                                    <TextBlock Text="Open" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </Button>
+
+                            <Button Width="80"  
+                                        Click="SaveButtonAddList_Click">
+
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="{Binding Images.SaveIcon[0].Value}" 
+                                           Width="20" Height="20" Margin="0,0,5,0"
+                                           RenderOptions.BitmapScalingMode="HighQuality"/>
+                                    <TextBlock Text="Save" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </Button>
+
+                        </StackPanel>
+
+                        <ListView Name="AddListListView"
+                                        DockPanel.Dock="Top">
+                            <ListView.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem Header="Remove" 
+                                              Click="RemoveMenuContextAddList_Click">
+
+                                        <MenuItem.Icon>
+                                            <Image Source="{Binding Images.RemoveIcon[0].Value}" 
+                                                RenderOptions.BitmapScalingMode="HighQuality"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem Header="Remove all actions" 
+                                              Click="RemoveAllActions_Click" >
+
+                                        <MenuItem.Icon>
+                                            <Image Source="{Binding Images.RemoveAllIcon[0].Value}" 
+                                                RenderOptions.BitmapScalingMode="HighQuality"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+                                </ContextMenu>
+                            </ListView.ContextMenu>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Description}">
+                                    </TextBlock>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </DockPanel>-->
+                    <DockPanel>
+                    <ListBox Name="operationsListBox" Canvas.Left="322" Canvas.Top="28">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel >
+                                    <StackPanel.ContextMenu>
+                                        <ContextMenu>
+                                                <MenuItem Header="Edit" Click="MenuItem_Click" />
+                                        </ContextMenu>
+                                    </StackPanel.ContextMenu>
+                                    <TextBlock Text="{Binding Description}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    </DockPanel>
                 </TabItem>
-                
             </TabControl>
             <TabControl DockPanel.Dock="Right">
                 <TabItem>

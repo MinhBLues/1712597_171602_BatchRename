@@ -31,6 +31,7 @@ namespace BatchRename
         public MainWindow()
         {
             InitializeComponent();
+            //addList = new BindingList<IAction>();
 
         }
         public BindingList<Filename> filenameList;
@@ -44,8 +45,11 @@ namespace BatchRename
 
         }
         List<StringOperation> _prototypes = new List<StringOperation>();
+      //  BindingList<IAction> addList;
 
-        BindingList<StringOperation> _actions = new BindingList<StringOperation>();
+        // list of actions displayed to user to select and modify arguments
+      //  BindingList<ActionGUI> actionList;
+        public BindingList<StringOperation> _actions = new BindingList<StringOperation>();
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             var prototype1 = new ReplaceOperation()
@@ -63,20 +67,49 @@ namespace BatchRename
 
                 }
             };
+            var prototype3 = new NameNormalizeOperation()
+            {
+                Args = new NameNormalizeArgs()
+                {
+
+                }
+            };
+            var prototype4 = new MoveOperation()
+            {
+                Args = new MoveArgs()
+                {
+
+                }
+            };
+            var prototype5 = new UniqueOperation()
+            {
+                Args = new UniqueArgs()
+                {
+
+                }
+            };
 
             _prototypes.Add(prototype1);
             _prototypes.Add(prototype2);
+            _prototypes.Add(prototype3);
+            _prototypes.Add(prototype4);
+            _prototypes.Add(prototype5);
 
             ActionsListView.ItemsSource = _prototypes;
 
-           // ActionsListView.ItemsSource = _actions;
+            operationsListBox.ItemsSource = _actions;
         }
 
-        private void Click(object sender, RoutedEventArgs e)
+        private void Add_Click(object sender, RoutedEventArgs e)
         {
             var action = ActionsListView.SelectedItem as StringOperation;
             _actions.Add(action.Clone());
-            var item = ActionsListView.SelectedItem as StringOperation;
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            var item = operationsListBox.SelectedItem as StringOperation;
+
             item.Config();
         }
     }
