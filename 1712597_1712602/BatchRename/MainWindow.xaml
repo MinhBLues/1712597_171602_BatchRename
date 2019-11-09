@@ -11,7 +11,6 @@
        >
 
     <Grid >
-        
         <DockPanel>
             <ToolBarTray Height="40" Margin="0,0,0,10" DockPanel.Dock="Top" Background="Azure">
                 <ToolBar Background="Azure">
