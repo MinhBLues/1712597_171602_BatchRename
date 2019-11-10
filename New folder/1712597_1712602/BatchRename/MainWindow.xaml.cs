@@ -112,6 +112,12 @@ namespace BatchRename
 
             item.Config();
         }
+
+        private void DeleteMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            var index = operationsListBox.SelectedIndex;
+            _actions.RemoveAt(index);
+        }
     }
 }
 
