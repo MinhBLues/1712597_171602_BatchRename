@@ -32,7 +32,6 @@ namespace BatchRename.Dialog
 
         private void AddToListButton_Click(object sender, RoutedEventArgs e)
         {
-
             myArgs.From = FromTextBox.Text;
             myArgs.To = ToTextBox.Text;
             DialogResult = true;

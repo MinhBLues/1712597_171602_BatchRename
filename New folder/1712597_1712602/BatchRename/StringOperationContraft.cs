@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,15 +43,14 @@ namespace BatchRename
         public StringArgs Args { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
-
         public abstract string Operate(string origin);
 
         public abstract string Name { get; }
         public abstract string Description { get; }
-
         public abstract StringOperation Clone();
-
         public abstract void Config();
+
+        public abstract string ActionProcess(string newFileName, bool isFileNAme);
     }
 
     public class ReplaceOperation : StringOperation, INotifyPropertyChanged
@@ -90,6 +90,28 @@ namespace BatchRename
         }
 
         public override string Name => "Replace";
+
+        public override string ActionProcess(string inputString, bool isFilename)
+        {
+            var args = Args as ReplaceArgs;
+            string from = args.From;
+            string to = args.To;
+            //string area = this.Area;
+
+            // split name and extension
+            string name = inputString;
+            string extension = "";
+            if (isFilename)
+            {
+                name = Path.GetFileNameWithoutExtension(inputString);
+                extension = inputString.Remove(0, name.Length);
+            }
+
+            name = inputString.Replace(from, to);
+            // conbine and return
+            string result = name;
+            return result;
+        }
         public override string Description
         {
             get
@@ -134,6 +156,31 @@ namespace BatchRename
             }
         }
         public override string Name => "New Case";
+
+        public override string ActionProcess(string inputString, bool isFilename)
+        {
+            var args = Args as ReplaceArgs;
+            string from = args.From;
+            string to = args.To;
+            //string area = this.Area;
+
+            // split name and extension
+            string name = inputString;
+            string extension = "";
+            if (isFilename)
+            {
+                name = Path.GetFileNameWithoutExtension(inputString);
+                extension = inputString.Remove(0, name.Length);
+            }
+
+            // process
+
+            name = inputString.Replace(from, to);
+
+            // conbine and return
+            string result = name + extension;
+            return result;
+        }
         public override string Description
         {
             get
@@ -176,6 +223,30 @@ namespace BatchRename
         }
 
         public override string Name => "Name Normalize";
+        public override string ActionProcess(string inputString, bool isFilename)
+        {
+            var args = Args as ReplaceArgs;
+            string from = args.From;
+            string to = args.To;
+            //string area = this.Area;
+
+            // split name and extension
+            string name = inputString;
+            string extension = "";
+            if (isFilename)
+            {
+                name = Path.GetFileNameWithoutExtension(inputString);
+                extension = inputString.Remove(0, name.Length);
+            }
+
+            // process
+
+            name = inputString.Replace(from, to);
+
+            // conbine and return
+            string result = name + extension;
+            return result;
+        }
         public override string Description
         {
             get
@@ -224,6 +295,30 @@ namespace BatchRename
         }
 
         public override string Name => "Move";
+        public override string ActionProcess(string inputString, bool isFilename)
+        {
+            var args = Args as ReplaceArgs;
+            string from = args.From;
+            string to = args.To;
+            //string area = this.Area;
+
+            // split name and extension
+            string name = inputString;
+            string extension = "";
+            if (isFilename)
+            {
+                name = Path.GetFileNameWithoutExtension(inputString);
+                extension = inputString.Remove(0, name.Length);
+            }
+
+            // process
+
+            name = inputString.Replace(from, to);
+
+            // conbine and return
+            string result = name + extension;
+            return result;
+        }
         public override string Description
         {
             get
@@ -270,6 +365,30 @@ namespace BatchRename
         }
 
         public override string Name => "Unique Name";
+        public override string ActionProcess(string inputString, bool isFilename)
+        {
+            var args = Args as ReplaceArgs;
+            string from = args.From;
+            string to = args.To;
+            //string area = this.Area;
+
+            // split name and extension
+            string name = inputString;
+            string extension = "";
+            if (isFilename)
+            {
+                name = Path.GetFileNameWithoutExtension(inputString);
+                extension = inputString.Remove(0, name.Length);
+            }
+
+            // process
+
+            name = inputString.Replace(from, to);
+
+            // conbine and return
+            string result = name + extension;
+            return result;
+        }
         public override string Description
         {
             get

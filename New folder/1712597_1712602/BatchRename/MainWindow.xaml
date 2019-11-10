@@ -102,7 +102,7 @@
 
                     <DockPanel>
                         <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="10,10,0,10">
-                            <Button Width="100" Height="40" Margin="0,0,10,0"  Command="{Binding Path=SelectFileCommand}">
+                            <Button Width="100" Height="40" Margin="0,0,10,0"  Click = "AddFile">
                                 <StackPanel Orientation="Horizontal">
                                     <Image Source="{Binding Path = Icon.icon[5].Value}" 
                                            Width="30" Height="30" Margin="0,0,5,0"
@@ -110,7 +110,7 @@
                                     <TextBlock VerticalAlignment="Center">Add</TextBlock>
                                 </StackPanel>
                             </Button>
-                            <Button Width="100" Height="40" Margin="0,0,10,0">
+                            <Button Width="100" Height="40" Margin="0,0,10,0" Click="BatchFileButton_Click">
                                 <StackPanel Orientation="Horizontal">
                                     <Image Source="{Binding Path = Icon.icon[8].Value}" 
                                            Width="30" Height="30" Margin="0,0,5,0"
@@ -123,9 +123,9 @@
                             <ListView.View>
                                 <GridView >
                                     <GridViewColumn Header="Filename" Width="177" DisplayMemberBinding="{Binding Value}" />
-                                    <GridViewColumn Header="New Filename" Width="177" DisplayMemberBinding="{Binding NewNameFiles }"/>
+                                    <GridViewColumn Header="New Filename" Width="177" DisplayMemberBinding="{Binding NewFilename }"/>
                                     <GridViewColumn Header="Path" Width="177" DisplayMemberBinding="{Binding Path}"/>
-                                    <GridViewColumn Header="Status" Width="177" DisplayMemberBinding="{Binding Status}"/>
+                                    <GridViewColumn Header="Status" Width="177" DisplayMemberBinding="{Binding BatchState}"/>
                                 </GridView>
                             </ListView.View>
                         </ListView>
