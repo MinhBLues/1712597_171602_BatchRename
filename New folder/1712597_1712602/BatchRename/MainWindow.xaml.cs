@@ -33,11 +33,15 @@ namespace BatchRename
         {
             InitializeComponent();
             _actions = new BindingList<StringOperation>();
+
             OldNameFolders = new BindingList<Foldername>();
             NewFolderName = new BindingList<string>();
+
             OldNameFiles = new BindingList<Filename>();
             NewFilename = new BindingList<string>();
+
             FileListView.ItemsSource = OldNameFiles;
+            FolderListView.ItemsSource = OldNameFolders;
         }
         public BindingList<string> NewFolderName { get; }
         public BindingList<Filename> OldNameFiles { get; }
@@ -56,8 +60,20 @@ namespace BatchRename
         }
 
         private void HelpButton_Clik(object sender, RoutedEventArgs e)
-        { 
+        {
+            string message = "An project from Window Programming Course\n"
+                + "Performed by:\n"
+                + "1712597 - Pham Ba Minh\n"
+                + "1712602 - Nguyen Thi Cam My\n"
+                + "Contact: 1712597@student.hcmus.edu.vn\n"
+                + "Contact: 1712602@student.hcmus.edu.vn";
 
+            string caption = "Batch Rename Information";
+            MessageBoxButton buttons = MessageBoxButton.OK;
+            MessageBoxImage icon = MessageBoxImage.Information;
+
+            // Show message box
+            MessageBoxResult result = System.Windows.MessageBox.Show(message, caption, buttons, icon);
         }
         List<StringOperation> _prototypes = new List<StringOperation>();
 
@@ -158,6 +174,30 @@ namespace BatchRename
             }
         }
 
+        private void AddFolder(object sender, RoutedEventArgs e)
+        {
+            var dialog = new CommonOpenFileDialog
+            {
+                IsFolderPicker = true,
+            };
+
+            if (dialog.ShowDialog() != CommonFileDialogResult.Ok)
+            {
+                return;
+            }
+
+            var dir = new DirectoryInfo(dialog.FileName);
+            if (!dir.Exists)
+            {
+                return;
+            }
+            string path = dir + "\\";
+            foreach (var fInf in dir.GetDirectories())
+            {
+                OldNameFolders.Add(new Foldername() { Value = fInf.Name, Path = path });
+            }
+        }
+
         private void BatchFileButton_Click(object sender, RoutedEventArgs e)
         {
             // show message box warns user about options selected such as: make new name or skip, ...
@@ -194,7 +234,37 @@ namespace BatchRename
 
         }
 
-    
+        private void BatchFolderButton_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (var foldername in OldNameFolders)
+            {
+                // each filename
+                string newFoldername = foldername.Value;
+                foldername.BatchState = "Success";
+                foldername.FailedActions = "Failed Actions List:\n";
+                bool isSuccess = true;
+
+                foreach (var action in _actions)
+                {
+                    try
+                    {
+                        newFoldername = action.ActionProcess(newFoldername, true);
+                    }
+                    catch (Exception ex)
+                    {
+                        isSuccess = false;
+                        foldername.FailedActions += action.Description + "\n";
+                    }
+                }
+                foldername.NewFolderName = newFoldername;
+
+                if (!isSuccess)
+                {
+                    foldername.BatchState = "Fail";
+                }
+
+            }
+        }
     }
 }
 

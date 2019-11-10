@@ -49,14 +49,20 @@
                     <DockPanel>
                         <StackPanel >
                         <ListBox Name="ActionsListView" DockPanel.Dock="Top" Height="200">
-  
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
-                                    <TextBlock Background="AliceBlue"  Width="220" Height="30" Margin="5,5,5,0" Text="{Binding Name, Mode=OneWay}" VerticalAlignment="Center"  />
+                                        <TextBlock Background="AliceBlue"  Width="220" Height="30" Margin="5,5,5,0" Text="{Binding Name, Mode=OneWay}" VerticalAlignment="Center" Padding="5,5,5,0"  />
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
                         </ListBox>
-                        <Button  DockPanel.Dock ="Bottom"  Name="Add" Click="Add_Click" Content="Add" Margin="120,30,0,10" Width="80" Height="25" />
+                            <Button  DockPanel.Dock ="Bottom"  Name="Add" Click="Add_Click"  Margin="120,30,0,10" Width="80" Height="35" >
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="{Binding Path= Icon.icon[12].Value}" 
+                                           Width="30" Height="30" Margin="0,0,5,0"
+                                           RenderOptions.BitmapScalingMode="HighQuality"/>
+                                    <TextBlock VerticalAlignment="Center" >Add</TextBlock>
+                                </StackPanel>
+                            </Button>
                         </StackPanel>
                     </DockPanel>
                 </TabItem>
@@ -77,8 +83,18 @@
                                 <StackPanel >
                                     <StackPanel.ContextMenu>
                                         <ContextMenu>
-                                                <MenuItem Header="Edit" Click="MenuItem_Click" />
-                                                <MenuItem Header="Delete" Click="DeleteMenuItem_Click"/>
+                                                <MenuItem Header="Edit" Click="MenuItem_Click" >
+                                                    <MenuItem.Icon>
+                                                        <Image Source="{Binding Path = Icon.icon[10].Value}" 
+                                                RenderOptions.BitmapScalingMode="HighQuality"/>
+                                                    </MenuItem.Icon>
+                                                </MenuItem>
+                                                <MenuItem Header="Delete" Click="DeleteMenuItem_Click">
+                                                    <MenuItem.Icon>
+                                                        <Image Source="{Binding Path= Icon.icon[11].Value}" 
+                                                RenderOptions.BitmapScalingMode="HighQuality"/>
+                                                    </MenuItem.Icon>
+                                                </MenuItem>
                                             </ContextMenu>
                                     </StackPanel.ContextMenu>
                                     <TextBlock Text="{Binding Description}" />
@@ -142,7 +158,7 @@
                     </TabItem.Header>
                     <DockPanel>
                         <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="10,10,0,10">
-                            <Button Width="120" Height="40" Margin="0,0,10,0"  Command="{Binding Path=SelectFolderCommand}">
+                            <Button Width="120" Height="40" Margin="0,0,10,0" Click="AddFolder">
                                 <StackPanel Orientation="Horizontal">
                                     <Image Source="{Binding Path = Icon.icon[7].Value}" 
                                            Width="30" Height="30" Margin="0,0,5,0"
@@ -150,7 +166,7 @@
                                     <TextBlock VerticalAlignment="Center">Add</TextBlock>
                                 </StackPanel>
                             </Button>
-                            <Button Width="120" Height="40" Margin="0,0,10,0">
+                            <Button Width="120" Height="40" Margin="0,0,10,0" Click="BatchFolderButton_Click">
                                 <StackPanel Orientation="Horizontal">
                                     <Image Source="{Binding Path = Icon.icon[8].Value}" 
                                            Width="30" Height="30" Margin="0,0,5,0"
@@ -162,10 +178,10 @@
                         <ListView  ItemsSource="{Binding OldNameFolders}" Name="FolderListView"  DockPanel.Dock="Bottom" >
                             <ListView.View>
                                 <GridView >
-                                    <GridViewColumn Header="Filename" Width="177" DisplayMemberBinding="{Binding Value}" />
-                                    <GridViewColumn Header="New Filename" Width="177" DisplayMemberBinding="{Binding NewNameFolders }"/>
+                                    <GridViewColumn Header="Folder Name" Width="177" DisplayMemberBinding="{Binding Value}" />
+                                    <GridViewColumn Header="New FolderName" Width="177" DisplayMemberBinding="{Binding NewFolderName }"/>
                                     <GridViewColumn Header="Path" Width="177" DisplayMemberBinding="{Binding Path}"/>
-                                    <GridViewColumn Header="Status" Width="177" DisplayMemberBinding="{Binding Status}"/>
+                                    <GridViewColumn Header="Status" Width="177" DisplayMemberBinding="{Binding BatchState}"/>
                                 </GridView>
                             </ListView.View>
                         </ListView>

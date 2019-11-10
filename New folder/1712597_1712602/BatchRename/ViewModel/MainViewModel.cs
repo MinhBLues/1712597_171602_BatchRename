@@ -50,7 +50,7 @@ namespace BatchRename.ViewModel
         {
             // SelectDialog = new RelayCommand(AddDialog);
             /*SelectFileCommand = new RelayCommand(AddFile);*/
-            SelectFolderCommand = new RelayCommand(AddFolder);
+          //  SelectFolderCommand = new RelayCommand(AddFolder);
             BatchFileCommand = new RelayCommand<string>(AddOperation);
            
         }
@@ -95,29 +95,29 @@ namespace BatchRename.ViewModel
         //        OldNameFiles.Add(new Filename() { Value = fInf.Name, Path = path });
         //    }
         //}
-        private void AddFolder()
-        {
-            var dialog = new CommonOpenFileDialog
-            {
-                IsFolderPicker = true,
-            };
+        //private void AddFolder()
+        //{
+        //    var dialog = new CommonOpenFileDialog
+        //    {
+        //        IsFolderPicker = true,
+        //    };
 
-            if (dialog.ShowDialog() != CommonFileDialogResult.Ok)
-            {
-                return;
-            }
+        //    if (dialog.ShowDialog() != CommonFileDialogResult.Ok)
+        //    {
+        //        return;
+        //    }
 
-            var dir = new DirectoryInfo(dialog.FileName);
-            if (!dir.Exists)
-            {
-                return;
-            }
-            string path = dir + "\\";
-            foreach (var fInf in dir.GetDirectories())
-            {
-                //OldNameFolders.Add(new Foldername() { Value = fInf.Name, Path = path });
-            }
-        }
+        //    var dir = new DirectoryInfo(dialog.FileName);
+        //    if (!dir.Exists)
+        //    {
+        //        return;
+        //    }
+        //    string path = dir + "\\";
+        //    foreach (var fInf in dir.GetDirectories())
+        //    {
+        //        //OldNameFolders.Add(new Foldername() { Value = fInf.Name, Path = path });
+        //    }
+        //}
 
       
     }

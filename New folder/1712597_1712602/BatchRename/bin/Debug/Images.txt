@@ -1,4 +1,4 @@
-10
+13
 refresh.png
 help.png
 action.png
@@ -9,3 +9,6 @@ folder.png
 addfolder.png
 batch.png
 tap.png
+edit.png
+delete.png
+plus.png

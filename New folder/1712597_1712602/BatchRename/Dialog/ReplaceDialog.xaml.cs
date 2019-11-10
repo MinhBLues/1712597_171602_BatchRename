@@ -28,12 +28,19 @@ namespace BatchRename.Dialog
             myArgs = args as ReplaceArgs;
             FromTextBox.Text = myArgs.From;
             ToTextBox.Text = myArgs.To;
+            AreaComboBox.ItemsSource = cases;
         }
+        BindingList<MyString> cases = new BindingList<MyString>()
+        {
+            new MyString(){ Value="Name" },
+            new MyString(){ Value="Extension" },
+        };
 
         private void AddToListButton_Click(object sender, RoutedEventArgs e)
         {
             myArgs.From = FromTextBox.Text;
             myArgs.To = ToTextBox.Text;
+            myArgs.Area = (AreaComboBox.SelectedItem as MyString).Value;
             DialogResult = true;
             Close();
         }

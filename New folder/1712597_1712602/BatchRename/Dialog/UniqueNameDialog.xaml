@@ -24,7 +24,7 @@
 
         <Button Height="20" Width="80" HorizontalAlignment="Right"
                                 Margin="0,5,10,10"
-                                Content="Add to List"
+                                Content="OK"
                                 Click="AddToListButton_Click"></Button>
         </StackPanel>
     </Grid>

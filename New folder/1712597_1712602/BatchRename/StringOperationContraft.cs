@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,7 @@ namespace BatchRename
     {
         public string From { get; set; }
         public string To { get; set; }
+        public string Area { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
     }
@@ -62,6 +64,7 @@ namespace BatchRename
             var args = Args as ReplaceArgs;
             var from = args.From;
             var to = args.To;
+            var index = args.Area;
 
             return origin.Replace(from, to);
         }
@@ -96,6 +99,7 @@ namespace BatchRename
             var args = Args as ReplaceArgs;
             string from = args.From;
             string to = args.To;
+            string index = args.Area;
             //string area = this.Area;
 
             // split name and extension
@@ -106,10 +110,16 @@ namespace BatchRename
                 name = Path.GetFileNameWithoutExtension(inputString);
                 extension = inputString.Remove(0, name.Length);
             }
-
-            name = inputString.Replace(from, to);
+            if (index == "Extension")
+            {
+                extension = extension.Replace(from, to);
+            }
+            else
+            {
+                name = name.Replace(from, to); 
+            }
             // conbine and return
-            string result = name;
+            string result = name + extension;
             return result;
         }
         public override string Description
@@ -157,14 +167,32 @@ namespace BatchRename
         }
         public override string Name => "New Case";
 
+        static public string MakeStringLower(string inputString)
+        {
+            return inputString.ToLower();
+        }
+
+        static public string MakeStringUpper(string inputString)
+        {
+            return inputString.ToUpper();
+        }
+
+        static public string MakeStringCapitalized(string inputString)
+        {
+            string result = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(inputString.ToLower());
+            return result;
+        }
+        public delegate string TypeStringProcess(string inputString);
+
+        private TypeStringProcess[] makeStringCase = new TypeStringProcess[]
+        {
+                MakeStringLower,
+                MakeStringUpper,
+                MakeStringCapitalized,
+
+        };
         public override string ActionProcess(string inputString, bool isFilename)
         {
-            var args = Args as ReplaceArgs;
-            string from = args.From;
-            string to = args.To;
-            //string area = this.Area;
-
-            // split name and extension
             string name = inputString;
             string extension = "";
             if (isFilename)
@@ -172,12 +200,17 @@ namespace BatchRename
                 name = Path.GetFileNameWithoutExtension(inputString);
                 extension = inputString.Remove(0, name.Length);
             }
-
-            // process
-
-            name = inputString.Replace(from, to);
-
-            // conbine and return
+            int caseIndex = -1;
+            var args = Args as NewCaseArgs;
+            if (args.Case == "LowerCase")
+            {
+                caseIndex = 0;
+            }
+            else
+                if (args.Case == "UpperCase") caseIndex = 1;
+            else
+                if(args.Case == "CapitalizedCase") caseIndex = 2;
+            name = makeStringCase[caseIndex](name);
             string result = name + extension;
             return result;
         }
@@ -199,7 +232,6 @@ namespace BatchRename
             var args = Args as NameNormalizeArgs;
             var from = args.From;
             var to = args.To;
-
             return origin.Replace(from, to);
         }
 
@@ -223,14 +255,39 @@ namespace BatchRename
         }
 
         public override string Name => "Name Normalize";
+        static public string MakeStringCapitalized(string inputString)
+        {
+            string result = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(inputString.ToLower());
+            return result;
+        }
+        static public string[] SplitString(string inputString, string[] seperators)
+        {
+            string[] result = inputString.Split(seperators, StringSplitOptions.RemoveEmptyEntries);
+            return result;
+        }
+        static public string MakeStringNormalized(string inputString)
+        {
+            string result = "";
+            // capitalize
+            string capitaliedString = MakeStringCapitalized(inputString);
+            // split to tokens
+            string[] tokens = SplitString(capitaliedString, new string[] { " " });
+
+            // combine all token, one space between each two tokens
+            for (int i = 0; i < tokens.Length; i++)
+            {
+                if (i == tokens.Length - 1)
+                    result += tokens[i];
+                else
+                    result += tokens[i] + " ";
+            }
+
+            return result;
+        }
         public override string ActionProcess(string inputString, bool isFilename)
         {
-            var args = Args as ReplaceArgs;
-            string from = args.From;
-            string to = args.To;
-            //string area = this.Area;
+            var args = Args as NameNormalizeArgs;
 
-            // split name and extension
             string name = inputString;
             string extension = "";
             if (isFilename)
@@ -240,11 +297,10 @@ namespace BatchRename
             }
 
             // process
+            name = MakeStringNormalized(name);
 
-            name = inputString.Replace(from, to);
-
-            // conbine and return
-            string result = name + extension;
+            // combine and return
+            string result = name ;
             return result;
         }
         public override string Description
@@ -295,14 +351,38 @@ namespace BatchRename
         }
 
         public override string Name => "Move";
+
+        static public string MoveString(string inputString, int startIndex, int length, int indexMoveTo)
+        {
+            inputString = inputString.TrimStart(' ');
+            inputString = inputString.TrimEnd(' ');
+
+            // find first-number-character string
+            string part = inputString.Substring(startIndex, length);
+            part = " " + part;
+            string body = inputString.Substring(length);
+
+
+            // move to destination
+            string result = body.Insert(indexMoveTo, part);
+            result = result.TrimStart(' ');
+            result = result.TrimEnd(' ');
+            return result;
+        }
+
         public override string ActionProcess(string inputString, bool isFilename)
         {
-            var args = Args as ReplaceArgs;
-            string from = args.From;
-            string to = args.To;
-            //string area = this.Area;
+            var args = Args as MoveArgs;
 
-            // split name and extension
+            int startAt = Int32.Parse(args.From);
+            int length = Int32.Parse(args.To);
+            string i = args.Index;
+            int destination = -1;
+
+            if (i == "Begin") destination = 0;
+            if (i == "End") destination = 1;
+
+            // split
             string name = inputString;
             string extension = "";
             if (isFilename)
@@ -312,10 +392,10 @@ namespace BatchRename
             }
 
             // process
+            int indexMoveTo = (destination == Begin) ? 0 : name.Length - length;
+            name = MoveString(name, startAt, length, indexMoveTo);
 
-            name = inputString.Replace(from, to);
-
-            // conbine and return
+            // combine and return
             string result = name + extension;
             return result;
         }
@@ -327,6 +407,10 @@ namespace BatchRename
                 return $"Move {args.From} character(s) from index {args.To} to the {args.Index}";
             }
         }
+        public static int ISBNLength => 13;
+        public static int Begin => 0;
+
+        public static int End => 1;
     }
     public class UniqueOperation : StringOperation, INotifyPropertyChanged
     {
@@ -365,15 +449,23 @@ namespace BatchRename
         }
 
         public override string Name => "Unique Name";
+
+        static public string TransformString(string inputString)
+        {
+            // generate a GUID
+            Guid g = Guid.NewGuid();
+            string result = g.ToString();
+
+            return result;
+        }
         public override string ActionProcess(string inputString, bool isFilename)
         {
-            var args = Args as ReplaceArgs;
+            var args = Args as UniqueArgs;
             string from = args.From;
             string to = args.To;
             //string area = this.Area;
 
-            // split name and extension
-            string name = inputString;
+             string name = inputString;
             string extension = "";
             if (isFilename)
             {
@@ -382,10 +474,9 @@ namespace BatchRename
             }
 
             // process
+            name = TransformString(name);
 
-            name = inputString.Replace(from, to);
-
-            // conbine and return
+            // combine and return
             string result = name + extension;
             return result;
         }

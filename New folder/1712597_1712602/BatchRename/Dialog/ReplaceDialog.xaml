@@ -7,19 +7,27 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BatchRename.Dialog"
              mc:Ignorable="d" 
-              Height="180" Width="250" Background="AliceBlue">
+              Height="210" Width="250" Background="AliceBlue">
     <Grid>
+
         <StackPanel>
             <TextBlock Text="Replace" 
                    FontWeight="Bold"
                    Margin="10,6,10,0"></TextBlock>
+            <ComboBox Name ="AreaComboBox" Margin="150,10,10,0">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Value, Mode=OneWay}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
             <TextBlock Text="From" Margin="10,5,148,0"></TextBlock>
             <TextBox Name="FromTextBox" Text="" Margin="10,5,148,0"/>
             <TextBlock Text="To" Margin="10,5,148,0"></TextBlock>
             <TextBox Name="ToTextBox" Text="" Margin="10,5,148,0"/>
             <Button Height="20" Width="80" HorizontalAlignment="Right"
                                 Margin="0,5,10,10"
-                                Content="Add to List"
+                                Content="OK"
                                 Click="AddToListButton_Click"></Button>
         </StackPanel>
        
