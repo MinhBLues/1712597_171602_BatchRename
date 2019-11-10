@@ -25,7 +25,7 @@
             <TextBox Name="FromTextBox" Text="" Margin="10,5,148,0"/>
             <TextBlock Text="To" Margin="10,5,148,0"></TextBlock>
             <TextBox Name="ToTextBox" Text="" Margin="10,5,148,0"/>
-            <Button Height="20" Width="80" HorizontalAlignment="Right"
+            <Button Height="20" Width="50" HorizontalAlignment="Right"
                                 Margin="0,5,10,10"
                                 Content="OK"
                                 Click="AddToListButton_Click"></Button>

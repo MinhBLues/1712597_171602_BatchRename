@@ -22,7 +22,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <Button Height="20" Width="80" HorizontalAlignment="Right"
+        <Button Height="20" Width="50" HorizontalAlignment="Right"
                                 Margin="0,5,10,10"
                                 Content="OK"
                                 Click="AddToListButton_Click"></Button>

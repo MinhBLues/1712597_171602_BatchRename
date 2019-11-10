@@ -134,6 +134,14 @@
                                     <TextBlock VerticalAlignment="Center">Batch</TextBlock>
                                 </StackPanel>
                             </Button>
+                            <Button Width="120" Height="40" Margin="0,0,10,0" Click="SaveFile_Click" HorizontalAlignment="Right" >
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="{Binding Path = Icon.icon[13].Value}" 
+                                           Width="30" Height="30" Margin="0,0,5,0"
+                                           RenderOptions.BitmapScalingMode="HighQuality"/>
+                                    <TextBlock VerticalAlignment="Center">Save</TextBlock>
+                                </StackPanel>
+                            </Button>
                         </StackPanel>
                         <ListView  ItemsSource="{Binding OldNameFiles}" Name="FileListView"  DockPanel.Dock="Bottom" >
                             <ListView.View>
@@ -172,6 +180,14 @@
                                            Width="30" Height="30" Margin="0,0,5,0"
                                            RenderOptions.BitmapScalingMode="HighQuality"/>
                                     <TextBlock VerticalAlignment="Center">Batch</TextBlock>
+                                </StackPanel>
+                            </Button>
+                            <Button Width="120" Height="40" Margin="0,0,10,0" Click="SaveFolder_Click" HorizontalAlignment="Right" >
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="{Binding Path = Icon.icon[13].Value}" 
+                                           Width="30" Height="30" Margin="0,0,5,0"
+                                           RenderOptions.BitmapScalingMode="HighQuality"/>
+                                    <TextBlock VerticalAlignment="Center">Save</TextBlock>
                                 </StackPanel>
                             </Button>
                         </StackPanel>

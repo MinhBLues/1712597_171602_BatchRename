@@ -4,6 +4,7 @@ using GalaSoft.MvvmLight.Command;
 using Microsoft.WindowsAPICodePack.Dialogs;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
@@ -25,10 +26,8 @@ namespace BatchRename
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    /// List<StringOperation> _prototypes = new List<StringOperation>();
     public partial class MainWindow : Window
     {
-        
         public MainWindow()
         {
             InitializeComponent();
@@ -38,27 +37,38 @@ namespace BatchRename
             NewFolderName = new BindingList<string>();
 
             OldNameFiles = new BindingList<Filename>();
-            NewFilename = new BindingList<string>();
+            NewFileName = new BindingList<string>();
 
             FileListView.ItemsSource = OldNameFiles;
             FolderListView.ItemsSource = OldNameFolders;
+
+            OldNamesFolder = new ObservableCollection<DirectoryInfo>();
+            OldNamesFile = new ObservableCollection<FileInfo>();
         }
         public BindingList<string> NewFolderName { get; }
         public BindingList<Filename> OldNameFiles { get; }
 
+        public string pathfolder;
+        public ObservableCollection<DirectoryInfo> OldNamesFolder { get; }
+        public ObservableCollection<FileInfo> OldNamesFile { get; }
         /// <summary>
         /// Folder
         /// </summary>
         public BindingList<Foldername> OldNameFolders { get; }
-        public BindingList<string> NewFilename { get; }
-
+        public BindingList<string> NewFileName { get; }
 
         public BindingList<Filename> filenameList;
         private void RefreshButton_Clik(object sender, RoutedEventArgs e)
         {
+            _actions.Clear();
+
+            // clear all filenames added
+            OldNameFiles.Clear();
+
+            // clear all folderames added
+            OldNameFolders.Clear();
 
         }
-
         private void HelpButton_Clik(object sender, RoutedEventArgs e)
         {
             string message = "An project from Window Programming Course\n"
@@ -79,7 +89,6 @@ namespace BatchRename
 
         // list of actions displayed to user to select and modify arguments
         public BindingList<StringOperation> _actions { get; set; }
-
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             var prototype1 = new ReplaceOperation()
@@ -128,28 +137,24 @@ namespace BatchRename
             ActionsListView.ItemsSource = _prototypes;
 
             operationsListBox.ItemsSource = _actions;
-            
-        }
 
+        }
         private void Add_Click(object sender, RoutedEventArgs e)
         {
             var action = ActionsListView.SelectedItem as StringOperation;
             _actions.Add(action.Clone());
         }
-
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             var item = operationsListBox.SelectedItem as StringOperation;
 
             item.Config();
         }
-
         private void DeleteMenuItem_Click(object sender, RoutedEventArgs e)
         {
             var index = operationsListBox.SelectedIndex;
             _actions.RemoveAt(index);
         }
-
         private void AddFile(object sender, RoutedEventArgs e)
         {
             var dialog = new CommonOpenFileDialog
@@ -171,9 +176,9 @@ namespace BatchRename
             foreach (var fInf in dir.GetFiles())
             {
                 OldNameFiles.Add(new Filename() { Value = fInf.Name, Path = path });
+                OldNamesFile.Add(fInf);
             }
         }
-
         private void AddFolder(object sender, RoutedEventArgs e)
         {
             var dialog = new CommonOpenFileDialog
@@ -192,12 +197,13 @@ namespace BatchRename
                 return;
             }
             string path = dir + "\\";
+            pathfolder = dir.FullName;
             foreach (var fInf in dir.GetDirectories())
             {
                 OldNameFolders.Add(new Foldername() { Value = fInf.Name, Path = path });
+                OldNamesFolder.Add(fInf);
             }
         }
-
         private void BatchFileButton_Click(object sender, RoutedEventArgs e)
         {
             // show message box warns user about options selected such as: make new name or skip, ...
@@ -224,6 +230,7 @@ namespace BatchRename
                     }
                 }
                 filename.NewFilename = newFilename;
+                NewFileName.Add(newFilename);
 
                 if (!isSuccess)
                 {
@@ -233,7 +240,6 @@ namespace BatchRename
             }
 
         }
-
         private void BatchFolderButton_Click(object sender, RoutedEventArgs e)
         {
             foreach (var foldername in OldNameFolders)
@@ -257,7 +263,7 @@ namespace BatchRename
                     }
                 }
                 foldername.NewFolderName = newFoldername;
-
+                NewFolderName.Add(newFoldername);
                 if (!isSuccess)
                 {
                     foldername.BatchState = "Fail";
@@ -265,6 +271,95 @@ namespace BatchRename
 
             }
         }
+        private void SaveFolder_Click(object sender, RoutedEventArgs e)
+        {
+            var error = 0;
+            for (var i = 0; i < OldNameFolders.Count; ++i)
+            {
+                if (!IsValidFileName(NewFolderName[i]))
+                {
+                    ++error;
+                    continue;
+                }
+                string name = OldNamesFolder[i].FullName + "25031999";
+                Directory.Move(OldNamesFolder[i].FullName, name);
+                Directory.Move(name, $"{pathfolder}\\{NewFolderName[i]}");
+            }
+            UpdateOldNameFolder();
+            UpdateNewNameFolder();
+        }
+        private void SaveFile_Click(object sender, RoutedEventArgs e)
+        {
+            var error = 0;
+            for (var i = 0; i < OldNameFiles.Count; ++i)
+            {
+                if (!IsValidFileName(NewFileName[i]))
+                {
+                    ++error;
+                    continue;
+                }
+                var dir = OldNamesFile[i].Directory;
+                OldNamesFile[i].MoveTo($"{dir?.FullName}/{NewFileName[i]}");
+            }
+            UpdateOldNameFile();
+            UpdateNewNameFile();
+
+        }
+        private void UpdateNewNameFolder()
+        {
+            NewFolderName.Clear();
+            int i = 0;
+
+            foreach (var fInf in OldNamesFolder)
+            {
+                NewFolderName.Add(fInf.Name);
+                OldNameFolders[i].Value = fInf.Name;
+                i++;
+            }
+        }
+        private void UpdateOldNameFolder()
+        {
+            var tempList = OldNamesFolder.ToList();
+            OldNamesFolder.Clear();
+
+            foreach (var fInf in tempList)
+            {
+                fInf.Refresh();
+                OldNamesFolder.Add(fInf);
+            }
+        }
+        private void UpdateNewNameFile()
+        {
+            NewFileName.Clear();
+            int i = 0;
+
+            foreach (var fInf in OldNamesFile)
+            {
+                NewFileName.Add(fInf.Name);
+                OldNameFiles[i].Value = fInf.Name;
+                i++;
+            }
+
+        }
+        private void UpdateOldNameFile()
+        {
+            var tempList = OldNamesFile.ToList();
+            OldNamesFile.Clear();
+
+            foreach (var fInf in tempList)
+            {
+                fInf.Refresh();
+                OldNamesFile.Add(fInf);
+            }
+        }
+        private static bool IsValidFileName(string fName)
+        {
+            return !InvalidChars.Any(fName.Contains);
+
+        }
+        private static readonly char[] InvalidChars = @"\/:*?""<>|".ToCharArray();
+
     }
-}
+    }
+
 

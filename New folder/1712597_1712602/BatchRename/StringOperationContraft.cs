@@ -300,7 +300,7 @@ namespace BatchRename
             name = MakeStringNormalized(name);
 
             // combine and return
-            string result = name ;
+            string result = name + extension;
             return result;
         }
         public override string Description
