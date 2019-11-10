@@ -1,0 +1,15 @@
+14
+refresh.png
+help.png
+action.png
+addlist.png
+file.png
+addfile.png
+folder.png
+addfolder.png
+batch.png
+tap.png
+edit.png
+delete.png
+plus.png
+save.png

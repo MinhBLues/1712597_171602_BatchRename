@@ -195,7 +195,7 @@
                             <ListView.View>
                                 <GridView >
                                     <GridViewColumn Header="Folder Name" Width="177" DisplayMemberBinding="{Binding Value}" />
-                                    <GridViewColumn Header="New FolderName" Width="177" DisplayMemberBinding="{Binding NewFolderName }"/>
+                                    <GridViewColumn Header="New FolderName" Width="177" DisplayMemberBinding="{Binding NewFoldername }"/>
                                     <GridViewColumn Header="Path" Width="177" DisplayMemberBinding="{Binding Path}"/>
                                     <GridViewColumn Header="Status" Width="177" DisplayMemberBinding="{Binding BatchState}"/>
                                 </GridView>

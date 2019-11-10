@@ -236,9 +236,7 @@ namespace BatchRename
                 {
                     filename.BatchState = "Fail";
                 }
-
             }
-
         }
         private void BatchFolderButton_Click(object sender, RoutedEventArgs e)
         {
@@ -262,7 +260,7 @@ namespace BatchRename
                         foldername.FailedActions += action.Description + "\n";
                     }
                 }
-                foldername.NewFolderName = newFoldername;
+                foldername.NewFoldername = newFoldername;
                 NewFolderName.Add(newFoldername);
                 if (!isSuccess)
                 {
@@ -307,13 +305,10 @@ namespace BatchRename
         }
         private void UpdateNewNameFolder()
         {
-            NewFolderName.Clear();
             int i = 0;
-
-            foreach (var fInf in OldNamesFolder)
+            foreach (var fInf in NewFolderName)
             {
-                NewFolderName.Add(fInf.Name);
-                OldNameFolders[i].Value = fInf.Name;
+                OldNameFolders[i].Value = fInf;
                 i++;
             }
         }
@@ -330,16 +325,12 @@ namespace BatchRename
         }
         private void UpdateNewNameFile()
         {
-            NewFileName.Clear();
             int i = 0;
-
-            foreach (var fInf in OldNamesFile)
+            foreach (var fInf in NewFileName)
             {
-                NewFileName.Add(fInf.Name);
-                OldNameFiles[i].Value = fInf.Name;
+                OldNameFiles[i].Value = fInf;
                 i++;
             }
-
         }
         private void UpdateOldNameFile()
         {
@@ -357,6 +348,7 @@ namespace BatchRename
             return !InvalidChars.Any(fName.Contains);
 
         }
+
         private static readonly char[] InvalidChars = @"\/:*?""<>|".ToCharArray();
 
     }

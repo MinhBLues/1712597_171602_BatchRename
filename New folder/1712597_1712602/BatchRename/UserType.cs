@@ -93,7 +93,7 @@ namespace BatchRename
         }
 
         private string newFoldername;
-        public string NewFolderName
+        public string NewFoldername
         {
             get => newFoldername;
             set
